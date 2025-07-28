@@ -1,0 +1,85 @@
+.itemzattributes .form-group {
+  margin-bottom: 10px;
+}
+#pestSave, .addAttri {
+  cursor: pointer;
+border: 1px solid #f4f1f1;
+background-color: #2271b1;
+padding: 4px;
+width: 100%;
+text-align: center;
+border-radius: 8px;
+margin-top: 20px;
+color: #fff;
+}
+
+.zipcode_list .active {
+     width: 30%;
+  text-align: center;
+  cursor: pointer;
+background-color: #d63638;
+padding: 4px;
+text-align: center;
+border-radius: 8px;
+color: #fff;
+margin-left: 10px;
+}
+
+.addDelete {
+  width: 10%;
+  text-align: center;
+  cursor: pointer;
+background-color: #d63638;
+padding: 4px;
+text-align: center;
+border-radius: 8px;
+color: #fff;
+margin-left: 10px;
+}
+.addUpdate  {
+  width: 10%;
+  text-align: center;
+  cursor: pointer;
+background-color: #2271b1;
+padding: 4px;
+text-align: center;
+border-radius: 8px;
+color: #fff;
+margin-left: 10px;
+}
+
+.itemzattributes .form-group {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+padding-bottom: 10px;
+}
+.itemzattributes .form-group label {
+  margin-right: 5px;
+  margin-left: 5px;
+  display: block;
+  margin-top: 5px;
+margin-bottom: 5px;
+}
+.itemzattributes {
+  margin-top: 20px;
+}
+.itemzattributes .form-group input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.zipcode_list .form-group {
+  display: flex;
+   border-bottom: 1px solid #eee;
+padding-bottom: 10px;
+padding-top: 10px;
+}
+.zipcode_list {
+  margin-top: 20px;
+}
+.serviceUpdate {
+    width: 20%;
+}
+.hide_button {
+    display: none !important;
+}
