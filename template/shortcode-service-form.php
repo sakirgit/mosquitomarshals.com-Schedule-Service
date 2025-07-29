@@ -101,40 +101,48 @@
 	<div class="form-group" style="margin-top: 20px; margin-bottom: 20px;"><label class="checkbox"><input name="request_information" type="checkbox" id="request_information" onclick="myRequest()" /> <strong style="color: red;">Request More Information</strong>
 	</label></div>
 <div id="service-product"></div>
-</div>
-</div>
-<div><input type="hidden" class="form-control" id="customerID" />
+<input type="hidden" class="form-control" id="customerID" />
 <input type="hidden" class="form-control" id="pestID" />
 <input type="hidden" class="form-control" id="officeID" />
 <input type="hidden" class="form-control" id="authenticationKey" />
-<input type="hidden" class="form-control" id="authenticationToken" /></div>
+<input type="hidden" class="form-control" id="authenticationToken" />
 <div id="moreInfo">
-<div class="payment-title">
-<h3>Payment Information</h3>
+	<div class="payment-title">
+		<h3>Payment Information</h3>
+	</div>
+	<div class="form-container">
+		<div class="field-container" style="display: none !important;"><label for="name">Name</label>
+			<input id="name" maxlength="20" type="text" />
+		</div>
+		<div class="field-container">
+			<label for="cardnumber">Card Number</label><span id="generatecard"></span>
+			<input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric" />
+			<svg id="ccicon" class="ccicon" width="750" height="471" viewbox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
+		</div>
+		<div class="field-container">
+			<label for="expirationdate">Expiration (mm/yy)</label>
+			<input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric" />
+		</div>
+		<div class="field-container">
+			<label for="securitycode">Security Code</label>
+			<input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="usr">Enter Promo Code:</label>
+		<input type="text" class="form-control" id="promoCode" style="display: block;padding: 15px; width: 37%; border: 1px solid #a8a8a8; border-radius: 3px; margin-bottom: 20px; margin-top: 5px;" />
+		<small>Your promo discount will be applied before you are charged for your first treatment.</small>
+	</div>
+	<div class="display">
+		<a href="#final_process" type="submit" onclick="scheduleAppointment(this)" class="schedule-service--next run">Schedule Appointment</a>
+	</div>
 </div>
-<div class="form-container">
-<div class="field-container" style="display: none !important;"><label for="name">Name</label>
-<input id="name" maxlength="20" type="text" /></div>
-<div class="field-container">
-
-<label for="cardnumber">Card Number</label><span id="generatecard"></span>
-<input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric" />
-<svg id="ccicon" class="ccicon" width="750" height="471" viewbox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
-
-&nbsp;
-
-&nbsp;
-
+<div id="submitRequest" style="display:none;">
+	<div class="display">
+		<a href="#final_process" type="submit" onclick="scheduleAppointment(this)" class="schedule-service--next run">Submit Request</a>
+	</div>
 </div>
-<div class="field-container"><label for="expirationdate">Expiration (mm/yy)</label>
-<input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric" /></div>
-<div class="field-container"><label for="securitycode">Security Code</label>
-<input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric" /></div>
 </div>
-<div class="form-group"><label for="usr">Enter Promo Code:</label>
-<input type="text" class="form-control" id="promoCode" style="display: block;padding: 15px; width: 37%; border: 1px solid #a8a8a8; border-radius: 3px; margin-bottom: 20px; margin-top: 5px;" />
-<small>Your promo discount will be applied before you are charged for your first treatment.</small></div>
-<div class="display"><a href="#final_process" type="submit" onclick="scheduleAppointment(this)" class="schedule-service--next run">Schedule Appointment</a></div>
 </div>
 <div id="zipcodeAvailable" style="display: none;">
 <h3 style="font-size: 19px;">Thank you for your interest, but we are not currently offering services to this location. <span id="availableCode"></span></h3>

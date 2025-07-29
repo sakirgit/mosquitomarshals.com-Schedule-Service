@@ -15,10 +15,13 @@ jQuery(document).ready(function() {
 function myRequest() {
   var checkBox = document.getElementById("request_information");
   var text = document.getElementById("moreInfo");
+  var submitButton = document.getElementById("submitRequest");
   if (checkBox.checked == true){
     text.style.display = "none";
+	submitButton.style.display = "block";
   } else {
-	    text.style.display = "block";
+	text.style.display = "block";
+	submitButton.style.display = "none";
    
   }
 }
@@ -316,9 +319,17 @@ function scheduleAppointment(n) {
 	formData.append('city', ct_none_city.value);
 	formData.append('state', ct_none_state.value);
 	formData.append('officeID', document.getElementById("officeID").value);
+	formData.append('sprovider', document.getElementById("service-name").textContent);
+	formData.append('sarea', document.getElementById("service-location").textContent);
+	formData.append('spemail', document.getElementById("service-email").textContent);
 	//const withOfficeID = Object.fromEntries(formData.entries());
 	console.log('formData serviceid :', formData.get("serviceid"));
 	
+	var checkBox = document.getElementById("request_information");
+	if (checkBox.checked == true){
+		formData.append('request_more_info', 'true');
+	}
+
 	fetch(window.location.protocol + '//' + window.location.hostname + '/wp-json/pestmarhsal/v1/serveid', {
 		method: 'POST',
 		body: formData,
