@@ -178,6 +178,7 @@
 </div>
 </div>
 <div id="processED"></div>
+<div class="loader" id="loader"></div>
 <script>
 
 $(function(){

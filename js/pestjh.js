@@ -127,6 +127,7 @@ function pestSubmition( n ) {
 	
 	
 	document.getElementById("nextProcess").disabled = true; 
+	document.getElementById("loader").style.display = "block";
 	messageConfirm.setAttribute('style','margin-top: 10px;color: #ed1c24;clear: both;');
 	messageConfirm.innerHTML = 'Processing...';
 	
@@ -150,6 +151,7 @@ function pestSubmition( n ) {
 		.then(response => response.json())
 		.then(result => {
 			console.log('Success:', result);
+			document.getElementById("loader").style.display = "none";
 			if(result.verify == 0) {
 				messageConfirm.setAttribute('style','display: none;');	
 			}
@@ -329,7 +331,7 @@ function scheduleAppointment(n) {
 	if (checkBox.checked == true){
 		formData.append('request_more_info', 'true');
 	}
-
+	document.getElementById("loader").style.display = "block";
 	fetch(window.location.protocol + '//' + window.location.hostname + '/wp-json/pestmarhsal/v1/serveid', {
 		method: 'POST',
 		body: formData,
@@ -337,7 +339,7 @@ function scheduleAppointment(n) {
 		.then(response => response.json())
 		.then(result => {
 			console.log('Success Sandig:', result);
-			
+			document.getElementById("loader").style.display = "none";
 			document.getElementById("confirmed-name").innerHTML = document.getElementById("service-name").textContent;
 			document.getElementById("confirmed-location").innerHTML  = document.getElementById("service-location").textContent;
 			document.getElementById("confirmed-phone").innerHTML  = document.getElementById("service-phone").textContent;
